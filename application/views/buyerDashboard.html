@@ -1,0 +1,783 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Togglemarket</title>
+    <link href="build/css/main.css" rel="stylesheet">
+    <link href="build/js/libraries/fullcalendar/lib/main.min.css" rel="stylesheet">
+    <script src="build/js/libraries/fullcalendar/lib/main.min.js"></script>
+    <link href="build/js/libraries/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+</head>
+
+<body class="blue-bg">
+    <div class="navigation-toggle">
+        <div onclick="window.location.href = '/workStation.html'" class="nt-item active">
+            <p>DASHBOARD</p>
+        </div>
+        <div onclick="window.location.href = '/catalogue.html'" class="nt-item">
+            <p>CATALOGUE</p>
+        </div>
+    </div>
+    <div class="backdrop">
+        <div class="add-new-project-popup">
+            <div class="popup-wrapper">
+                <div class="popup-container">
+                    <div class="content-area">
+                        <div class="signup-modal addProject">
+                            <div class="form-container full">
+                                <div class="form-heading">
+                                    <h3>New Project</h3>
+                                </div>
+                                <div class="general-form">
+                                    <div class="formRow half">
+                                        <input type="text" placeholder="Project name">
+                                    </div>
+                                    <div class="formRow half">
+                                        <input type="text" placeholder="Client's name">
+                                    </div>
+                                    <div class="formRow half">
+                                        <input type="text" placeholder="City">
+                                    </div>
+                                    <div class="formRow half">
+                                        <input type="text" placeholder="Country">
+                                    </div>
+                                    <div class="formRow half">
+                                        <textarea>Describe your project</textarea>
+                                    </div>
+                                    <div class="formRow half">
+                                        <div class="tgm_fileupload">
+                                            <div class="box js">
+                                                <div class="box__input">
+                                                    <input type="file" name="files[]" id="file" class="box__file" />
+                                                    <label for="file">
+                                                        <span class="box__dragndrop"> Drop files here or</span><br>
+                                                        <span class="selectCta">Select files</span>
+                                                    </label>
+                                                    <button type="submit" class="box__button">Upload</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                    <div class="formRow half">
+                                        <h4>Looking for</h4>
+                                        <ul class="radioContainer">
+                                            <li><input type="checkbox" checked> Furniture supplies</li>
+                                            <li><input type="checkbox"> Furniture supplies</li>
+                                        </ul>
+                                    </div>
+            
+                                    <div class="formRow half">
+                                    <h4>Star Rating</h4>
+                                        <fieldset class="rating">
+                                            <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                                            <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                            <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                                            <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                            <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                                            <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                            <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                                            <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                            <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                                            <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                        </fieldset>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="area-fields-holder">
+                                        <h3>Add Areas (optional)</h3>
+                                        <div class="areas-fields" id="ap-area-fields">
+                                            <div class="area-row" id="ap-1">
+                                                <div class="area-input">
+                                                    <input type="text" id="InputAddProjectAreaName-1" name="area" placeholder="Area 1">
+                                                </div>
+                                                <div class="area-input">
+                                                    <input type="text" id="InputAddProjectBudget-1" name="budget" placeholder="Budget">
+                                                </div>
+                                                <div class="area-input">
+                                                    <select id="InputAddProjectAreaType-1">
+                                                        <option>Area Types</option>
+                                                        <option>Hall</option>
+                                                        <option>Room</option>
+                                                        <option>Kitchen</option>
+                                                        <option>Lobby</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="addRemoveAreaCtas">
+                                        <a href="#" id="addAreaRow">Add more</a>
+                                    </div>
+            
+                                    <div class="formRow full"></div>
+            
+                                    <div class="clearfix"></div>
+                                    <div class="form-ctas">
+                                        <input type="button" value="Add project & complete" class="cta-common">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div onclick="hideBackdrop()" class="cross-container">
+                    <img src="build/images/cross-white.png"/>
+               </div>
+            </div>
+          
+        </div>
+        <div class="workstation-detail-popup">
+            <form class="wd-popup-detail">
+                <div class="content">
+                    <div class="wd-header">
+                        <h2>JW Marriot Harageisa</h2>
+                        <div class="rating-container">
+                            <span>Star Rating: </span>
+                            <div class="general-form">
+                                <fieldset class="rating">
+                                    <input type="radio" id="star5" name="rating" value="5" /><label class="full"
+                                        for="star5" title="Awesome - 5 stars"></label>
+                                    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label
+                                        class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                    <input type="radio" id="star4" name="rating" value="4" /><label class="full"
+                                        for="star4" title="Pretty good - 4 stars"></label>
+                                    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label
+                                        class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                    <input type="radio" id="star3" name="rating" value="3" /><label class="full"
+                                        for="star3" title="Meh - 3 stars"></label>
+                                    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label
+                                        class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                    <input type="radio" id="star2" name="rating" value="2" /><label class="full"
+                                        for="star2" title="Kinda bad - 2 stars"></label>
+                                    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label
+                                        class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                    <input type="radio" id="star1" name="rating" value="1" /><label class="full"
+                                        for="star1" title="Sucks big time - 1 star"></label>
+                                    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half"
+                                        for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wd-body">
+                        <div class="wd-body-left">
+                            <div  style="background-image: url('build/images/dummy_building.png');"
+                                class="edit-project-picture uploaded-image-holder">
+                                <div class="edit-picture-footer">
+                                    <input class="image-upload" value="" type="file" accept="image/*"/>
+                                    <img  src="build/images/edit.png" />
+                                    <p>Edit Project Picture</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wd-body-right">
+                            <div class="wd-form">
+                                <div class="form-cell form-cell-half">
+                                    <p>Project Name</p>
+                                    <input type="text" class="wd-input" />
+                                </div>
+                                <div class="form-cell form-cell-half">
+                                    <p>Client’s Name</p>
+                                    <input type="text" class="wd-input" />
+                                </div>
+                                <div class="form-cell form-cell-half">
+                                    <p>City</p>
+                                    <input type="text" class="wd-input" />
+                                </div>
+                                <div class="form-cell form-cell-half">
+                                    <p>Country</p>
+                                    <input type="text" class="wd-input" />
+                                </div>
+
+                                <div class="form-cell form-cell-full">
+                                    <p>Description</p>
+                                    <textarea></textarea>
+                                </div>
+
+                                <div class="form-cell">
+                                    <p>Looking for</p>
+                                    <label>
+                                        <input type="checkbox" />
+                                        Furniture Supplies
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" />
+                                        Operational Supplies
+                                    </label>
+                                </div>
+
+                                <div class="form-cell submit">
+                                    <input type="button" class="save-changes" value="Save Changes" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div onclick="hideEditWorkstationPopup()" class="cross-container reminders-cross">
+                <img src="build/images/cross-white.png" />
+            </div>
+        </div>
+    </div>
+    <div class="project-sidebar">
+        <div class="project-sidebar-title">
+            <div id="project-icon"></div>
+            <p>Projects</p>
+        </div>
+
+        <div class="open-project-sidebar-content">
+            <div class="ops-item">
+                <div class="ops-thumbnail">
+
+                </div>
+                <div class="ops-item-footer">
+                    <p>Kempinski Amman</p>
+                </div>
+            </div>
+
+            <div class="ops-item">
+                <div class="ops-thumbnail">
+
+                </div>
+                <div class="ops-item-footer">
+                    <p>JW Marriot Harageisa</p>
+                </div>
+            </div>
+
+            <div class="ops-item">
+                <div class="ops-thumbnail">
+
+                </div>
+                <div class="ops-item-footer">
+                    <p>KFairmont Harare</p>
+                </div>
+            </div>
+
+            <div class="ops-item">
+                <div class="ops-thumbnail">
+
+                </div>
+                <div class="ops-item-footer">
+                    <p>Hilton Abu Dhabi</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid alpha omega blue-bg page-container">
+        <div class="dashboard-layout">
+            <div class="sidebar">
+                <div class="sidebar-item">
+                    <div class="profile-avi trigger">
+                        <img src="build/images/avi.png">
+                        <span class="ncount hideifempty">3</span>
+                        <div class="dropdown">
+                            <ul>
+                                <li>David Hume</li>
+                                <li><a href="#">My Account</a></li>
+                                <li><a href="#">Dashboard</a></li>
+                                <li><a href="#">Messages <span class="hideifempty">3</span></a></li>
+                                <li><a href="#">Projects</a></li>
+                                <li><a href="#">Quotations</a></li>
+                                <li><a href="#">Log out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-item">
+                    <div class="sidebar-bubble">
+                        <img src="build/images/searchwhite.png" />
+                    </div>
+                </div>
+                <div onclick="showScheduler()" class="sidebar-item">
+                    <div class="sidebar-bubble">
+                        <img src="build/images/Group-1420.png" />
+                    </div>
+                </div>
+                <div class="sidebar-item">
+                    <div class="sidebar-bubble">
+                        <img src="build/images/heart.png" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard">
+                <div class="dashboard-layout-content buyer-dashboard-container">
+                    <div class="dashboard-layout-header">
+                        <div class="dlh dlh-left">
+                            <div class="hotel-avatar"
+                                style="background-image: url('https://thispersondoesnotexist.com/image');">
+                            </div>
+                            <div class="dls-title-holder">
+                                <p>David Hume’s Dashboard</p>
+                                <span>Account Details</span>
+                            </div>
+                        </div>
+                        <div class="dlh dlh-right">
+                            <div class="dlh-button edit-button">
+                                <img src="build/images/edit.png" />
+                                <span>Edit</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="buyer-dashboard-body">
+                    <div class="bd-body bdb-left-side">
+                        <div class="card fit-parent">
+
+                            <div class="body">
+                                <div class="chat-card">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bd-body bdb-right-side">
+
+                        <div class="bd-item">
+                            <div class="card fit-parent">
+                                <div class="header">
+                                    <div class="title">
+                                        <span>Project Manager</span>
+                                        <a class="subtitle">Add and delete projects or edit project parameters</a>
+                                    </div>
+
+                                    <div class="more"></div>
+                                </div>
+                                <div class="body">
+                                    <div class="project-manager-section">
+                                        <div class="project-manager-item">
+                                            <div style="background-image: url('build/images/hotel-pic1.png');"
+                                                class="pm-left">
+
+                                            </div>
+                                            <div class="pm-middle">
+                                                <p class="pm-name">JW Marriott Harageisa</p>
+                                                <p class="pm-status">Project status: <b>Ongoing</b></p>
+                                                <p class="pm-date">Created on 25/11/2019</p>
+                                            </div>
+                                            <div onclick="showEditWorstationPopup()" class="pm-right">
+                                                <p>Edit</p>
+                                            </div>
+                                        </div>
+                                        <div class="project-manager-item">
+                                            <div style="background-image: url('build/images/hotel-pic2.png');"
+                                                class="pm-left">
+
+                                            </div>
+                                            <div class="pm-middle">
+                                                <p class="pm-name">Kempsinki Amman Project</p>
+                                                <p class="pm-status">Project status: <b>Ongoing</b></p>
+                                                <p class="pm-date">Created on 25/11/2019</p>
+                                            </div>
+                                            <div class="pm-right">
+                                                <p>Edit</p>
+                                            </div>
+                                        </div>
+                                        <div class="project-manager-item">
+                                            <div style="background-image: url('build/images/hotel-pic3.png');"
+                                                class="pm-left">
+
+                                            </div>
+                                            <div class="pm-middle">
+                                                <p class="pm-name">JW Marriott Harageisa</p>
+                                                <p class="pm-status">Project status: <b>Ongoing</b></p>
+                                                <p class="pm-date">Created on 25/11/2019</p>
+                                            </div>
+                                            <div class="pm-right">
+                                                <p>Edit</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="project-manager-item">
+                                            <div style="background-image: url('build/images/hotel-pic3.png');"
+                                                class="pm-left">
+
+                                            </div>
+                                            <div class="pm-middle">
+                                                <p class="pm-name">JW Marriott Harageisa</p>
+                                                <p class="pm-status">Project status: <b>Ongoing</b></p>
+                                                <p class="pm-date">Created on 25/11/2019</p>
+                                            </div>
+                                            <div class="pm-right">
+                                                <p>Edit</p>
+                                            </div>
+                                        </div>
+                                        <div class="project-manager-item">
+                                            <div style="background-image: url('build/images/hotel-pic2.png');"
+                                                class="pm-left">
+
+                                            </div>
+                                            <div class="pm-middle">
+                                                <p class="pm-name">JW Marriott Harageisa</p>
+                                                <p class="pm-status">Project status: <b>Ongoing</b></p>
+                                                <p class="pm-date">Created on 25/11/2019</p>
+                                            </div>
+                                            <div class="pm-right">
+                                                <p>Edit</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p onclick="showNewProjectPopup()" class="footer-text">+ Create New Project</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="bd-item">
+                            <div id="reminder-card-notification" class="positioned-popup reminder-notification">
+                                <div class="positioned-popup-container">
+                                    <div class="positioned-popup-content">
+                                        <div class="reminders-notification-card">
+                                            <div class="rn-header">
+                                                <p>Notification settings</p>
+                                            </div>
+                                            <div class="rn-body">
+                                                <div class="reminder-datetime-holder">
+                                                    <span class="text">Remind me on </span>
+                                                    <div class="picker date-picker">
+                                                        <img src="build/images/calendar-navy.png" />
+                                                        <input type="input" class="dp" />
+
+
+                                                    </div>
+                                                    <span class="text">at, </span>
+                                                    <div class="picker time-picker">
+                                                        <input type="time" class="tp" />
+                                                    </div>
+                                                    <span class="text">via: </span>
+                                                </div>
+                                                <label>
+                                                    <input type="checkbox" />
+                                                    Text Message
+                                                </label>
+
+                                                <label>
+                                                    <input type="checkbox" />
+                                                    Email
+                                                </label>
+                                            </div>
+                                            <div class="rn-footer">
+                                                <button type="submit" class="save-changes-button">Save Changes</button>
+                                            </div>
+                                        </div>
+                                        <div onclick="hideReminderNotification()" class="cross-container">
+                                            <img src="build/images/cross-white.png" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="card fit-parent">
+                                <div class="header">
+                                    <div class="title">
+                                        <span>Reminders</span>
+                                    </div>
+
+                                    <div class="more"></div>
+                                </div>
+                                <div class="body">
+                                    <div class="reminder-section">
+                                        <div class="reminder-item">
+                                            <div class="reminder-left">
+                                                <div class="calendar-icon">
+                                                    <img src="build/images/calendar.png" />
+                                                    <div>
+                                                        <div class="day-holder">
+                                                            <p>10</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="month-holder">
+                                                        <p>June</p>
+                                                    </div>
+                                                </div>
+                                                <div class="reminder-info">
+                                                    <p>10/06/2020</p>
+                                                    <p><b>Steelite First Payment</b></p>
+                                                    <p><i>-$13,000</i></p>
+                                                </div>
+                                            </div>
+
+                                            <div class="reminder-right">
+                                                <div class="reminder-edit">
+                                                    <div id="bell-icon-1" class="reminder-bell-image empty-bell"></div>
+                                                    <span
+                                                        onclick="showReminderNotification('reminder-card-notification')">edit</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="reminder-item">
+                                            <div class="reminder-left">
+                                                <div class="calendar-icon">
+                                                    <img src="build/images/calendar.png" />
+                                                    <div class="day-holder">
+                                                        <p>10</p>
+                                                    </div>
+
+                                                    <div class="month-holder">
+                                                        <p>June</p>
+                                                    </div>
+                                                </div>
+                                                <div class="reminder-info">
+                                                    <p>10/06/2020</p>
+                                                    <p><b>Steelite First Payment</b></p>
+                                                    <p><i>-$13,000</i></p>
+                                                </div>
+                                            </div>
+
+                                            <div class="reminder-right">
+                                                <div class="reminder-edit">
+                                                    <div id="bell-icon-2" class="reminder-bell-image empty-bell"></div>
+                                                    <span
+                                                        onclick="showReminderNotification('reminder-card-notification')">edit</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="reminder-item">
+                                            <div class="reminder-left">
+                                                <div class="calendar-icon">
+                                                    <img src="build/images/calendar.png" />
+                                                    <div class="day-holder">
+                                                        <p>10</p>
+                                                    </div>
+
+                                                    <div class="month-holder">
+                                                        <p>June</p>
+                                                    </div>
+                                                </div>
+                                                <div class="reminder-info">
+                                                    <p>10/06/2020</p>
+                                                    <p><b>Steelite First Payment</b></p>
+                                                    <p><i>-$13,000</i></p>
+                                                </div>
+                                            </div>
+
+                                            <div class="reminder-right">
+                                                <div class="reminder-edit">
+                                                    <div id="bell-icon-3" class="reminder-bell-image empty-bell"></div>
+                                                    <span
+                                                        onclick="showReminderNotification('reminder-card-notification')">edit</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="reminder-item">
+                                            <div class="reminder-left">
+                                                <div class="calendar-icon">
+                                                    <img src="build/images/calendar.png" />
+                                                    <div class="day-holder">
+                                                        <p>10</p>
+                                                    </div>
+
+                                                    <div class="month-holder">
+                                                        <p>June</p>
+                                                    </div>
+                                                </div>
+                                                <div class="reminder-info">
+                                                    <p>10/06/2020</p>
+                                                    <p><b>Steelite First Payment</b></p>
+                                                    <p><i>-$13,000</i></p>
+                                                </div>
+                                            </div>
+
+                                            <div onclick="showReminderNotification('reminder-card-notification')"
+                                                class="reminder-right">
+                                                <div class="reminder-edit">
+                                                    <div id="bell-icon-4" class="reminder-bell-image empty-bell"></div>
+                                                    <span
+                                                        onclick="showReminderNotification('reminder-card-notification')">edit</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="add-reminder-container">
+                                        <p>+ Add Reminder</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="bd-scheduler-container">
+                    <div id="workstation-reminder-scheduler" class="positioned-popup reminder-notification">
+                        <div class="positioned-popup-container">
+                            <div class="positioned-popup-content">
+                                <div class="reminders-notification-card">
+                                    <div class="rn-header">
+                                        <p>Notification settings</p>
+                                    </div>
+                                    <div class="rn-body">
+                                        <div class="reminder-datetime-holder">
+                                            <span class="text">Remind me on </span>
+                                            <div class="picker date-picker">
+                                                <img src="build/images/calendar-navy.png" />
+                                                <input type="input" class="dp" />
+
+
+                                            </div>
+                                            <span class="text">at, </span>
+                                            <div class="picker time-picker">
+                                                <input type="time" class="tp" />
+                                            </div>
+                                            <span class="text">via: </span>
+                                        </div>
+                                        <label>
+                                            <input type="checkbox" />
+                                            Text Message
+                                        </label>
+
+                                        <label>
+                                            <input type="checkbox" />
+                                            Email
+                                        </label>
+                                    </div>
+                                    <div class="rn-footer">
+                                        <button type="submit" class="save-changes-button">Save Changes</button>
+                                    </div>
+                                </div>
+                                <div onclick="hideReminderNotification()" class="cross-container">
+                                    <img src="build/images/cross-black.png" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="scheduler-popup-content">
+                        <div class="add-event-popup-container">
+                            <input type="text" style="display: none;" value="" class="hidden-clicked-date-value" />
+                            <div class="add-event-popup">
+                                <div class="ae-header">
+                                    <p>Create Event</p>
+                                    <div class="cross-container">
+                                        <img onclick="hideAddEventPopup()" src="build/images/cross-black.png" />
+                                    </div>
+                                </div>
+
+                                <div class="ae-body">
+                                    <div class="form-container">
+                                        <div class="general-form">
+                                            <div class="formRow full">
+                                                <input type="text" placeholder="Event Title" class="aep-event-title">
+                                            </div>
+
+                                            <div class="formRow full">
+                                                <input type="text" placeholder="From Date" class="ae-from-input" />
+                                            </div>
+                                            <!-- <div class="formRow half">
+                                                    <input type="text" placeholder="To" class="ae-to-input" />
+                                                </div> -->
+                                            <div class="formRow full">
+                                                <div class="from-to-container">
+                                                    <div class="formRow half time-picker">
+                                                        <input type="time" placeholder="From Time" />
+                                                    </div>
+
+                                                    <div class="formRow half time-picker">
+                                                        <input type="time" placeholder="To Time" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="formRow full">
+                                                <select class="event-project">
+                                                    <option disabled="true">Project</option>
+                                                    <option id="0" value="Personal">Personal</option>
+                                                    <option id="1" value="JW Marriot Harageisa">JW Marriot Harageisa
+                                                    </option>
+                                                    <option id="2" value="Kempinski Amman">Kempinski Amman</option>
+                                                    <option id="3" value="Fairmont Harare">Fairmont Harare</option>
+                                                    <option id="4" value="Hilton Abu Dhabi">Hilton Abu Dhabi</option>
+                                                    <!-- <option value="Add Project">+ Add Project</option> -->
+                                                </select>
+                                            </div>
+                                            <!-- <div class="formRow full">
+                                                <input type="text" placeholder="Add users or emails" />
+                                            </div> -->
+                                            <div class="formRow full">
+                                                <textarea class="aep-description" placeholder="Description"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div onclick="showReminderNotification('workstation-reminder-scheduler')"
+                                    class="aep-notification-settings">
+                                    <div class="add-bubble">
+                                        <p>+</p>
+                                    </div>
+                                    <p>Notification Settings</p>
+                                </div>
+                                <div class="ae-footer">
+                                    <button onclick="addEvent()" class="save-changes-button">Save Changes</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="aep-body">
+                            <div class="left">
+                                <div class="left-upper">
+                                    <p class="left-title">Calendar</p>
+                                    <button onclick="showAddEventPopup(true)" class="create-event-button">+ Create
+                                        Event</button>
+                                    <input type="text" class="left-search" placeholder="Search Events" />
+                                </div>
+                                <!-- <div class="mini-calender-holder">
+                                    <div id="mini-calender"></div>
+                                </div> -->
+                                <div class="left-inputs">
+
+                                    <div class="my-calendar-container">
+                                        <p>My Calendars</p>
+                                        <label>
+                                            <input type="checkbox" />
+                                            Personal
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" />
+                                            JW Marriot Harageisa
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" />
+                                            Kempinski Amman
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" />
+                                            Fairmont Harare
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" />
+                                            Hilton Abu Dhabi
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right-holder">
+                                <div class="right">
+                                    <div id="calendar">
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="build/js/togglemarket.min.js"></script>
+<script src="build/js/components/scheduler.js"></script>
+<script src="build/js/libraries/jquery-ui/jquery-ui.min.js"></script>
+<script src="build/js/pages/workstation.js"></script>
+<script src="build/js/components/imageUpload.js"></script>
+
+
+</html>

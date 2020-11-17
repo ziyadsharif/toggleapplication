@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Togglemarket</title>
+    <link href="build/css/main.css" rel="stylesheet">
+    <script src="build/js/libraries/fullcalendar/lib/main.min.js"></script>
+
+</head>
+
+<body class="blue-bg">
+    <!-- Popups -->
+    
+    
+
+    <!-- Main page -->
+    <div class="container-fluid alpha omega blue-bg page-container">
+        <div class="sidebar">
+            <div class="sidebar-item">
+                <div class="profile-avi trigger">
+                    <img src="build/images/avi.png">
+                    <span class="ncount hideifempty">3</span>
+                    <div class="dropdown">
+                        <ul>
+                            <li>David Hume</li>
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Messages <span class="hideifempty">3</span></a></li>
+                            <li><a href="#">Projects</a></li>
+                            <li><a href="#">Quotations</a></li>
+                            <li><a href="#">Log out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-item">
+                <div class="sidebar-bubble">
+                    <img src="build/images/searchwhite.png" />
+                </div>
+            </div>
+            <div onclick="showScheduler()" class="sidebar-item">
+                <div class="sidebar-bubble">
+                    <img src="build/images/Group-1420.png" />
+                </div>
+            </div>
+            <div class="sidebar-item">
+                <div class="sidebar-bubble">
+                    <img src="build/images/heart.png" />
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-layout">
+            <div class="dashboard">
+                <div class="dashboard-layout-content">
+                    <div class="dashboard-layout-header">
+                        <div class="dlh dlh-left">
+                            <div class="hotel-avatar"
+                                style="background-image: url('https://cf.bstatic.com/images/hotel/max1024x768/192/192028571.jpg');">
+                            </div>
+                            <div class="dls-title-holder">
+                                <p>JW Marriott Harageisa’s Workstation</p>
+                                <select class="select">
+                                    <option>JW Marriott Harageisa</option>
+                                    <option>JW Marriott Harageisa</option>
+                                    <option>JW Marriott Harageisa</option>
+                                    <option>JW Marriott Harageisa</option>
+                                    <option>JW Marriott Harageisa</option>
+                                    <option>JW Marriott Harageisa</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="dlh dlh-right">
+                            <a href="#" class="cta-common">+ Add to bidding page</a>
+                            <a href="#" class="cta-common">Delete</a>
+                        </div>
+                    </div>
+                    <div class="wishlist-container">
+                        <div class="section-seprator">
+                            <div class="brand">Steelite</div>
+                            <div class="sortby">
+                                <label>Sort by:</label>
+                                <select class="select">
+                                    <option>Project Relevance</option>
+                                    <option>Project Relevance</option>
+                                    <option>Project Relevance</option>
+                                    <option>Project Relevance</option>
+                                    <option>Project Relevance</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="wl-set">
+                            <div class="wl-single">
+                                <input type="checkbox" name="wl-item">
+                                <img src="build/images/bigCup.png">
+                                <div class="wl-item-detail">
+                                    <p>Rio by Steelite</p>
+                                    <h4>Red Teacup</h4>
+                                </div>
+                                <div class="wl-item-controls general-form">
+                                    <select>
+                                        <option>Kitchen</option>
+                                        <option>Bathroom</option>
+                                        <option>Toilet</option>
+                                        <option>Ghar</option>
+                                        <option>Phir Bathroom</option>
+                                    </select>
+                                    <div class="qty">
+                                        <div class="number">
+                                            <span class="minus">-</span>
+                                            <input type="number" value="1"/>
+                                            <span class="plus">+</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="wl-delete-cta">
+                                        <img src="build/images/trash.png">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="wl-single">
+                                <input type="checkbox" name="wl-item">
+                                <img src="build/images/bigCup.png">
+                                <div class="wl-item-detail">
+                                    <p>Rio by Steelite</p>
+                                    <h4>Red Teacup</h4>
+                                </div>
+                                <div class="wl-item-controls general-form">
+                                    <select>
+                                        <option>Kitchen</option>
+                                        <option>Bathroom</option>
+                                        <option>Toilet</option>
+                                        <option>Ghar</option>
+                                        <option>Phir Bathroom</option>
+                                    </select>
+                                    <div class="qty">
+                                        <div class="number">
+                                            <span class="minus">-</span>
+                                            <input type="number" value="1"/>
+                                            <span class="plus">+</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="wl-delete-cta">
+                                        <img src="build/images/trash.png">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="wl-single">
+                                <input type="checkbox" name="wl-item">
+                                <img src="build/images/bigCup.png">
+                                <div class="wl-item-detail">
+                                    <p>Rio by Steelite</p>
+                                    <h4>Red Teacup</h4>
+                                </div>
+                                <div class="wl-item-controls general-form">
+                                    <select>
+                                        <option>Kitchen</option>
+                                        <option>Bathroom</option>
+                                        <option>Toilet</option>
+                                        <option>Ghar</option>
+                                        <option>Phir Bathroom</option>
+                                    </select>
+                                    <div class="qty">
+                                        <div class="number">
+                                            <span class="minus">-</span>
+                                            <input type="number" value="1"/>
+                                            <span class="plus">+</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="wl-delete-cta">
+                                        <img src="build/images/trash.png">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="wl-single">
+                                <input type="checkbox" name="wl-item">
+                                <img src="build/images/bigCup.png">
+                                <div class="wl-item-detail">
+                                    <p>Rio by Steelite</p>
+                                    <h4>Red Teacup</h4>
+                                </div>
+                                <div class="wl-item-controls general-form">
+                                    <select>
+                                        <option>Kitchen</option>
+                                        <option>Bathroom</option>
+                                        <option>Toilet</option>
+                                        <option>Ghar</option>
+                                        <option>Phir Bathroom</option>
+                                    </select>
+                                    <div class="qty">
+                                        <div class="number">
+                                            <span class="minus">-</span>
+                                            <input type="number" value="1"/>
+                                            <span class="plus">+</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="wl-delete-cta">
+                                        <img src="build/images/trash.png">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-seprator">
+                            <div class="brand">Steelite</div>
+                        </div>
+                        <div class="wl-set">
+                            <div class="wl-single">
+                                <input type="checkbox" name="wl-item">
+                                <img src="build/images/bigCup.png">
+                                <div class="wl-item-detail">
+                                    <p>Rio by Steelite</p>
+                                    <h4>Red Teacup</h4>
+                                </div>
+                                <div class="wl-item-controls general-form">
+                                    <select>
+                                        <option>Kitchen</option>
+                                        <option>Bathroom</option>
+                                        <option>Toilet</option>
+                                        <option>Ghar</option>
+                                        <option>Phir Bathroom</option>
+                                    </select>
+                                    <div class="qty">
+                                        <div class="number">
+                                            <span class="minus">-</span>
+                                            <input type="number" value="1"/>
+                                            <span class="plus">+</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="wl-delete-cta">
+                                        <img src="build/images/trash.png">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="wl-single">
+                                <input type="checkbox" name="wl-item">
+                                <img src="build/images/bigCup.png">
+                                <div class="wl-item-detail">
+                                    <p>Rio by Steelite</p>
+                                    <h4>Red Teacup</h4>
+                                </div>
+                                <div class="wl-item-controls general-form">
+                                    <select>
+                                        <option>Kitchen</option>
+                                        <option>Bathroom</option>
+                                        <option>Toilet</option>
+                                        <option>Ghar</option>
+                                        <option>Phir Bathroom</option>
+                                    </select>
+                                    <div class="qty">
+                                        <div class="number">
+                                            <span class="minus">-</span>
+                                            <input type="number" value="1"/>
+                                            <span class="plus">+</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="wl-delete-cta">
+                                        <img src="build/images/trash.png">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="wl-single">
+                                <input type="checkbox" name="wl-item">
+                                <img src="build/images/bigCup.png">
+                                <div class="wl-item-detail">
+                                    <p>Rio by Steelite</p>
+                                    <h4>Red Teacup</h4>
+                                </div>
+                                <div class="wl-item-controls general-form">
+                                    <select>
+                                        <option>Kitchen</option>
+                                        <option>Bathroom</option>
+                                        <option>Toilet</option>
+                                        <option>Ghar</option>
+                                        <option>Phir Bathroom</option>
+                                    </select>
+                                    <div class="qty">
+                                        <div class="number">
+                                            <span class="minus">-</span>
+                                            <input type="number" value="1"/>
+                                            <span class="plus">+</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="wl-delete-cta">
+                                        <img src="build/images/trash.png">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="wl-single">
+                                <input type="checkbox" name="wl-item">
+                                <img src="build/images/bigCup.png">
+                                <div class="wl-item-detail">
+                                    <p>Rio by Steelite</p>
+                                    <h4>Red Teacup</h4>
+                                </div>
+                                <div class="wl-item-controls general-form">
+                                    <select>
+                                        <option>Kitchen</option>
+                                        <option>Bathroom</option>
+                                        <option>Toilet</option>
+                                        <option>Ghar</option>
+                                        <option>Phir Bathroom</option>
+                                    </select>
+                                    <div class="qty">
+                                        <div class="number">
+                                            <span class="minus">-</span>
+                                            <input type="number" value="1"/>
+                                            <span class="plus">+</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="wl-delete-cta">
+                                        <img src="build/images/trash.png">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="build/js/togglemarket.min.js"></script>
+<script src="build/js/components/counter.js"></script>
+</html>
