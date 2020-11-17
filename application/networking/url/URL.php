@@ -45,15 +45,15 @@ class URL
     public $updateuserURL =  "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337/api/user/updateUser/";
     public $changepasswordURL =  "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337/api/user/changePassword";
     public $sendemailURL =  "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337/api/email/send/";
-    public $getcountriesURL =  "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337api/country";
-    public $gettypeURL =  "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337api/type";
+    public $getcountriesURL =  "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337/api/country";
+    public $gettypeURL =  "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337/api/type";
     public $getproducts =  "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337/api/product/search";
     public $suggestiveSearch =  "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337/api/product/";
 
 
-    public $updatepersonalinfoURL =  "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337api/user/personalInfo";
-    public $updatecontactinfoURL =  "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337api/user/contactInfo";
-    public $updatecompanydetailsURL = "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337api/user/companyDetails/";
+    public $updatepersonalinfoURL =  "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337/api/user/personalInfo";
+    public $updatecontactinfoURL =  "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337/api/user/contactInfo";
+    public $updatecompanydetailsURL = "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337/api/user/companyDetails/";
 
     public $getallproducts =  "http://localhost:3000/api/product/getallproducts";
     public $getproductsbypage =  "http://localhost:3000/api/product/getproductsbypage/";
