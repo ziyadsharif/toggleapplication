@@ -55,11 +55,11 @@ class URL
     public $updatecontactinfoURL =  "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337/api/user/contactInfo";
     public $updatecompanydetailsURL = "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337/api/user/companyDetails/";
 
-    public $getallproducts =  "http://localhost:3000/api/product/getallproducts";
-    public $getproductsbypage =  "http://localhost:3000/api/product/getproductsbypage/";
-    public $getproductscount =  "http://localhost:3000/api/product/getproductscount";
-    public $getproductbyproductid =  "http://localhost:3000/api/product/getproductbyproductid/";
-    public $getproductsbycategoryid =  "http://localhost:3000/api/product/getproductsbycategoryid/";
+    public $getallproducts =  "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337/api/product/getallproducts";
+    public $getproductsbypage =  "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337/api/product/getproductsbypage/";
+    public $getproductscount =  "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337/api/product/getproductscount";
+    public $getproductbyproductid =  "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337/api/product/getproductbyproductid/";
+    public $getproductsbycategoryid =  "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337/api/product/getproductsbycategoryid/";
 
     public $getAreaTypes = "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337/api/areatype";
     public $addProject = "http://togglemarketapis.uaenorth.cloudapp.azure.com:1337/api/buyer-project";
