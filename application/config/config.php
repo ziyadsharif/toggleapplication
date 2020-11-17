@@ -23,7 +23,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://togglemarketapp.uaenorth.cloudapp.azure.com/togglemarket';
+$config['base_url'] = 'http://togglemarketapp.uaenorth.cloudapp.azure.com/';
 //$config['base_url'] = 'https://www.togglehospitality.com';
 //$config['base_url_togglemarket'] = 'http://localhost/togglemarketalpha/';
 $config['base_url_togglemarket'] = 'https://www.togglemarket.com/beta/';
